@@ -1,0 +1,28 @@
+.catalog {
+
+  &__headline {
+    font-size: 2.1em;
+  }
+
+}
+
+.gallery{
+
+  &-caption {
+    text-align: left;
+  }
+
+  &-img {
+    position: relative;
+    text-align: center;
+  }
+
+  &-thumbnail {
+    margin: 20px 0;
+  }
+
+}
+
+.paginator {
+  clear: both;
+}

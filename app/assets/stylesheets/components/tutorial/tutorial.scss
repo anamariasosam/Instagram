@@ -1,0 +1,91 @@
+// Place all the styles related to the tutorial controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.tutorial {
+  $root: &;
+  // container in BEM is the block itself
+  margin-top: 50px;
+
+  &:nth-child(4n-1) {
+    #{$root}__video {
+      float: right !important;
+    }
+  }
+
+  &__frame {
+    background-image: image-url("iphone.png");
+    height: 605px;
+    padding: 76px 18px 70px 22px;
+    position: relative;
+    top: 10px;
+    width: 296px;
+  }
+
+  &__headline {
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+
+    &.invisble {
+      opacity: 0;
+    }
+
+    &.visible {
+      animation: tutorialFade 400ms;
+    }
+  }
+
+  &__instructions {
+
+    margin-top: 10%;
+
+    @include respond-to(s) {
+      margin-top: 0;
+    };
+
+    @include respond-to(xs) {
+      margin-top: 0;
+    };
+
+    &.invisble {
+      opacity: 0;
+    }
+
+    &.visible {
+      animation: tutorialFade 800ms 100ms backwards;
+    }
+  }
+
+  &__subtitle {
+    font-weight: bold;
+    font-size: 1.15em;
+    margin-top: 20px;
+    text-transform: inherit;
+    text-align: left;
+  }
+
+  &__video {
+
+    height: 630px;
+    text-align: center;
+
+    &.invisble {
+      opacity: 0;
+    }
+
+    &.visible {
+      animation: tutorialFade 600ms;
+    }
+  }
+}
+
+@keyframes tutorialFade {
+  from {
+    opacity: 0;
+    transform: translateY(30%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}

@@ -1,0 +1,69 @@
+// Gems
+// @import "normalize-rails";
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+
+@import "base/variables";
+@import "base/document";
+
+// @import "overwrite";
+
+@import "helpers/respond-to";
+@import "helpers/touch";
+
+@import "layout/contacts";
+@import "layout/dashboard";
+@import "layout/flash_notices";
+@import "layout/footer";
+@import "layout/loader";
+@import "layout/menu";
+@import "layout/modal-login";
+@import "layout/sections";
+@import "layout/subscribe";
+@import "layout/updates";
+
+@import "components/home/intro";
+@import "components/home/about";
+@import "components/home/partners";
+
+@import "components/catalog/catalog";
+@import "components/catalog/categories";
+@import "components/catalog/products";
+
+@import "components/users/dashboard";
+@import "components/users/list";
+@import "components/users/stores";
+@import "components/users/suscribers";
+
+@import "components/legal/privacy";
+
+@import "components/devise/registration";
+@import "components/devise/errors";
+
+@import "components/tutorial/tutorial";
+
+@import "components/orders/order";
+
+// Vendor
+@import "footable/footable.core.min.css";
+@import "trix";
+@import "lightbox";
+@import "lightbox2";
+
+.app {
+  &__container {
+    width: 100%;
+    padding: 0;
+    min-height:100%;
+  	position:relative;
+  }
+
+  &__content {
+    padding-bottom: 100px;
+  }
+
+   &__bold-text {
+    font-weight: bold;
+  }
+}

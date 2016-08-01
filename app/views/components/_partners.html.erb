@@ -1,0 +1,19 @@
+<section class="container">
+
+  <header class="major">
+    <h2 class="">Tiendas aliadas</h2>
+  </header>
+
+  <div class="row text-center">
+    <% @stores.each do |store| %>
+      <% if store.name? and store.products.count > 0  %>
+        <figure class="app__partners-figure col-xs-6 col-sm-4 col-md-3">
+          <%= link_to store do %>
+            <img src="<%= store.image %>" class="img-circle app__partners-img" alt="catlog, aliados, <%= store.name%>">
+          <% end %>
+        </figure>
+      <% end %>
+    <% end %>
+  </div>
+
+</section>

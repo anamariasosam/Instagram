@@ -1,0 +1,23 @@
+.sectionHero {
+  @extend .background-purple;
+
+  color: #fff;
+
+  margin-bottom: 30px;
+
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  &__headline {
+    line-height: 1;
+    margin-top: 0;
+    margin-bottom: 5px;
+  }
+
+  &__link {
+    color: #fff;
+    &:hover {
+      color: #fff !important;
+    }
+  }
+}

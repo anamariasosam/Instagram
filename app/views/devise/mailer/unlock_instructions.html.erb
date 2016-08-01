@@ -1,0 +1,12 @@
+<section class="app__registration_container section wrapper special">
+  <div class="inner">
+    <header class="major">
+      <h2>¡Hola <%= @resource.email %>!</h2>
+    </header>
+  </div>
+  <div>
+    <p>Tu cuenta ha sido bloqueada por excesivos intentos fallidos de iniciar sesión </p>
+    <p>Haz clic en el siguiente link para desbloquear tu cuenta</p>
+    <p><%= link_to 'Desbloquear Cuenta', unlock_url(@resource, unlock_token: @token) %></p>
+  </div>
+</section>

@@ -1,0 +1,116 @@
+
+.hamburger {
+
+  &__button {
+    width: 45px;
+    height: 45px;
+
+    &:hover,
+    &:focus {
+      background-color: #fff !important;
+    }
+
+    .icon-bar {
+      visibility: hidden;
+      background-color: $secondary-color !important;
+
+    }
+
+    &.collapsed .icon-bar {
+      visibility: visible;
+    }
+
+    i {
+      color: $secondary-color;
+      display: inline-block;
+      font-size: 18px;
+      font-weight: lighter;
+      position: relative;
+      top: -10px;
+    }
+
+    &.collapsed i {
+      display: none;
+    }
+  }
+
+  &__items {
+
+  }
+
+  &__links {
+  }
+
+  &__list {
+
+  }
+
+  &__word {
+  }
+
+}
+.login_btn {
+  // background-color: $menu-color;
+  background: $menu-color;
+  background: -webkit-linear-gradient(45deg, $menu-color, #E543273);
+  background: -o-linear-gradient(45deg, $menu-color, #E543273);
+  background: -moz-linear-gradient(45deg, $menu-color, #E543273);
+  background: linear-gradient(45deg, $menu-color, #E543273);
+
+  border-radius: 2px;
+  color: #fff !important;
+  font-weight: bold;
+  margin-top: 7px;
+  margin-right: 7px;
+  padding: 10px 20px !important;
+
+  &:active,
+  &:focus,
+  &:hover {
+    background-color: $menu-color-active !important;
+    background: -webkit-linear-gradient(30deg, darken($menu-color, 10%),darken(#E54327, 5%));
+    background: -o-linear-gradient(30deg, darken($menu-color, 10%),darken(#E54327, 5%));
+    background: -moz-linear-gradient(30deg, darken($menu-color, 10%),darken(#E54327, 5%));
+    background: linear-gradient(30deg, darken($menu-color, 10%),darken(#E54327, 5%));
+
+  }
+}
+
+.navbar {
+  background-color: #fff;
+
+  &-right {
+    & .open > a,
+    & .open > a:hover,
+    & .open > a:focus {
+      border-color: $menu-color;
+    }
+  }
+
+  &__adminItem {
+
+    @include respond-to(l) {
+      line-height: 25px !important;
+    };
+
+    @include respond-to(m) {
+      line-height: 25px !important;
+    };
+
+    @include respond-to(s) {
+      line-height: 27px !important;
+    };
+
+    @include respond-to(xs) {
+      line-height: 30px !important;
+    };
+  }
+
+  .active {
+    border-bottom: 4px solid coral;
+    a {
+      color: #777 !important;
+      background-color: transparent !important;
+    }
+  }
+}

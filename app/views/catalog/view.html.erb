@@ -1,0 +1,23 @@
+<% content_for :title, "Catálogo - " %>
+
+<header class="sectionHero">
+  <div class="container">
+    <h2 class="">Catálogo</h2>
+  </div>
+</header>
+
+<section class="container">
+
+    <header class="major">
+      <%= render 'categories/list' %>
+    </header>
+
+    <div class="row">
+      <%= render @products %>
+    </div>
+
+    <div class="paginator text-center">
+      <%= paginate @products %>
+    </div>
+
+</section>

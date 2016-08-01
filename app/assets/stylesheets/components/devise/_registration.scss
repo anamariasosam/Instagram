@@ -1,0 +1,31 @@
+.registration {
+  &_form {
+    max-width: 770px;
+    margin: 0 auto;
+  }
+
+  &_form-group {
+    & label {
+      text-align: left;
+    }
+  }
+
+  &_image {
+    margin: 0 auto;
+    margin-bottom: 3em;
+  }
+
+  &_message {
+    text-align: left;
+  }
+
+    @media (max-width: 656px)  {
+      &_table {
+        width: 80%;
+        margin: 0 auto;
+        & tr td {
+          display: block;
+        }
+      }
+    }
+}

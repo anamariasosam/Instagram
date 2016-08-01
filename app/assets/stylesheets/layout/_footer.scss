@@ -1,0 +1,41 @@
+.footer {
+
+  background: #fff;
+
+  clear: both;
+  color: #909090;
+  margin-top: 100px;
+  width: 100%;
+  padding: 25px 50px;
+
+  .fa {
+    color: crimson;
+  }
+
+  &__link {
+    color: #333333;
+    font-weight: bold;
+    border-bottom: 1px dotted #fff;
+
+    &:hover {
+      border-bottom-style: solid;
+      color: #909090;
+      font-style: italic;
+      text-decoration: none;
+    }
+  }
+
+  &__text {
+    font-size: 1.1em;
+    text-align: center;
+    margin: 0;
+  }
+
+  &_second {
+    @media (max-width: 378px) {
+      & {
+        display: block;
+      }
+    }
+  }
+}

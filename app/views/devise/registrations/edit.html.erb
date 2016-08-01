@@ -1,0 +1,103 @@
+<header class="sectionHero">
+  <div class="container">
+    <h2>Información adicional</h2>
+  </div>
+</header>
+
+<section class="container">
+
+  <div class="registration_form">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= devise_error_messages! %>
+
+      <table class="table stores__form">
+        <tr>
+          <% if @user.type == "Store" %>
+            <td class="stores__form-data">
+              <div class="form-group">
+                <%= f.label "Nombre de la Tienda*" %> <br>
+                <%= f.text_field :name, autofocus: true, class: 'form-control' %>
+              </div>
+            </td>
+          <% else %>
+          <td class="stores__form-data">
+            <div class="form-group">
+              <%= f.label "Nombre Completo*" %> <br>
+              <%= f.text_field :full_name, autofocus: true, class: 'form-control' %>
+            </div>
+          </td>
+          <% end %>
+
+          <td class="stores__form-data">
+            <div class="form-group">
+              <%= f.label "Correo*" %> <br>
+              <%= f.email_field :email, class: 'form-control' %>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="stores__form-data">
+            <div class="form-group">
+              <%= f.label "Ciudad*" %>
+              <%= f.text_field :city, class: 'form-control' %>
+            </div>
+            <div class="form-group">
+              <%= f.label "País*" %>
+              <%= f.text_field :country, class: 'form-control' %>
+            </div>
+          </td>
+          <% if @user.type == "Store" %>
+            <td rowspan="2" class="stores__form-data">
+              <div class="form-group">
+                <%= f.label "Información adicional" %> <br>
+                <%= f.text_area :info, rows: 9, class: 'form-control' %>
+              </div>
+            </td>
+
+            <% if !current_user.name? %>
+              <%= f.hidden_field :pilot, value: true %>
+              <%= f.hidden_field :waiting_position, value: Store.where("details->'pilot' = ?", "false").all.count %>
+            <% end %>
+
+          <% else %>
+            <td rowspan="2" class="stores__form-data">
+              <div class="form-group">
+                <%= f.label "Dirección de envío" %> <br>
+                <%= f.text_area :address, rows: 9, class: 'form-control' %>
+              </div>
+            </td>
+          <% end %>
+        </tr>
+
+        <tr>
+          <td class="stores__form-data">
+            <div class="form-group">
+              <%= f.label "Celular*" %> <br>
+              <%= f.telephone_field :phone_number, class: 'form-control' %>
+            </div>
+          </td>
+        </tr>
+        <!-- User token -->
+        <% if session['super_token'] %> <br>
+          <%= f.hidden_field :user_token, value: session['super_token'] %>
+        <% end %>
+      </table>
+
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+      <% end %>
+
+      <p class="help-block">(*) Campos obligatorios</p>
+
+      <div class="actions">
+        <%= f.submit 'Guardar', :class => 'btn btn-primary   col-md-offset-3 col-sm-offset-3 col-sm-6  col-xs-offset-3 col-xs-6 '  %>
+      </div>
+      <br>
+    <% end %>
+
+    <!-- <%= button_to "Eliminar mi cuenta", registration_path(resource_name),
+    data: { confirm: "¿Estás seguro? Esta acción no se puede deshacer" }, method: :delete,
+     class: "button special col-md-12 col-sm-12 col-xs-12 col-lg-12"%> -->
+  </div>
+</section>

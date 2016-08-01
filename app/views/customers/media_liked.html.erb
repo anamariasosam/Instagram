@@ -1,0 +1,32 @@
+<div class="dashboard__header">
+  <div class="container-fluid">
+    <h2 class="dashboard__headline">
+      Las fotografías que te han gustado de Instagram
+    </h2>
+    <%= link_to "Filtrar", customers_list_path, class:"btn btn-default btn-success js_instagramLoad" %>
+  </div>
+</div>
+<section class="container-fluid">
+
+  <div class="row">
+    <% @media.each do |media| %>
+    <div class="col-xs-4 col-sm-3 col-md-2 ">
+        <a  href="<%= media['link'] %>"
+            target="_blank"
+            class='dashboard_gallery-thumbnail dashboard_gallery-active'>
+
+          <img  src="<%= media['images']['thumbnail']['url'] %>"
+                class="dashboard_gallery-img img-responsive"
+                alt="product" >
+
+          <div class="dashboard__actions">
+            <i class="fa fa-instagram dashboard_icon"></i>
+          </div>
+
+        </a>
+    </div>
+    <% end %>
+
+  </div>
+
+</section>

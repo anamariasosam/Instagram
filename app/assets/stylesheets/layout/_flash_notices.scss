@@ -1,0 +1,20 @@
+.flashNotices {
+  max-width: 600px;
+  position: fixed;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  width: 60%;
+
+  @media (max-width: 600px) {
+    & {
+      width: 92%;
+    }
+  }
+}
+
+.alert-info {
+  color: #31708f !important;
+  text-align: center;
+}

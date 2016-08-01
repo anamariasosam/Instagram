@@ -1,0 +1,29 @@
+#error_explanation {
+  & h2 {
+    font-size: 20px;
+    text-transform: none;
+    margin-bottom: 0;
+  }
+
+  ul {
+    list-style: none;
+    padding:0;
+    margin:0;
+  }
+
+  li {
+    font-weight: 100;
+    padding-left: 1em;
+    text-indent: -.7em;
+
+  }
+
+  li:before {
+    content: "• ";
+    color: $menu-color;
+  }
+}
+.alert-danger {
+  background-color: #fff !important;
+  border-color: #fff !important;
+}

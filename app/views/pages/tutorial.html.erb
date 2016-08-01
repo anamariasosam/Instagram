@@ -1,0 +1,79 @@
+<% content_for :title, "Tutoriales - " %>
+
+<header class="sectionHero">
+  <div class="container">
+    <h2 class="">Tutoriales</h2>
+  </div>
+</header>
+
+<section class="container">
+
+  <%= render partial: "/pages/video", locals: {
+    headline: 'Crear una cuenta',
+    url: "0",
+    recommendations: [
+      'Debes tener una cuenta de Instagram',
+      'El número de celular es primordial para el contacto con los clientes',
+      'Escribe toda la información de los productos que vendes.'
+    ],
+    steps: [
+      'Selecciona la opción \'Ingresar con Instagram\'',
+      'El número de celular es primordial para el contacto con los clientes',
+      'Ingresa tus datos de Instagram',
+      'Autoriza a Catlog para poder acceder a tus información',
+      'Completa la información de contacto',
+      'Guarda'
+    ]
+  } %>
+
+  <hr>
+
+  <%= render partial: "/pages/video", locals: {
+    headline: 'Crear un producto',
+    url: "4",
+    recommendations: [
+      'Escoge la imagen de Instagram en la que mejor se ve tu producto',
+      'Publica toda la información que un cliente necesite saber de ese producto'
+    ],
+    steps: [
+      'Selecciona la opción \'Crear producto\'',
+      'Elige la imagen que desees',
+      'Completa la información del producto',
+      'Guarda',
+    ]
+  } %>
+
+  <hr>
+
+  <%= render partial: "/pages/video", locals: {
+    headline: 'Editar un producto',
+    url: "1",
+    recommendations: [
+      'Puedes ir actualizando la cantidad de productos que tienes disponibles.',
+      'Añade información que consideres necesaria',
+      'Cuando eliminas un producto toda la información de este se pierde.'
+    ],
+    steps: [
+      'Selecciona la opción \'Ver productos\'',
+      'Elige el producto que desees editar',
+      'Edita la información del producto',
+      'Guarda'
+    ]
+  } %>
+
+  <hr>
+
+  <%= render partial: "/pages/video", locals: {
+    headline: 'Editar tu cuenta',
+    url: "2",
+    recommendations: [
+      'Siempre verifica la información de contacto que actualizaste.'
+    ],
+    steps: [
+      'Selecciona la opción \'Editar mi información\'',
+      'Edita la información que desees',
+      'Guarda'
+    ]
+  } %>
+
+</section>
