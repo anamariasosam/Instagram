@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'near_me/index'
+
   root 'home#index'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
